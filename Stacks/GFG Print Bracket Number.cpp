@@ -11,7 +11,7 @@ public:
 	          count++;
 	          ans.push_back(count);
 	          st.push(count);
-	      }else if (S[i]==')'){  // S[i]==')'
+	      }else if (S[i]==')'){  // S = "(aa(bdc))p(dee)" we need to ingnore the aa bdc dee
 	            ans.push_back(st.top()); 
 	            st.pop();
 	      }
