@@ -73,8 +73,8 @@ public:
 class Solution {
 public:
     bool checkIfPangram(string sentence) {
-      vector<int>mp(26,false);
-      for(auto &ch:sentence) mp[ch-'a']=true;
+      vector<int>mp(26,false);  //O(26)
+      for(auto &ch:sentence) mp[ch-'a']=true;  //O(n)
       for(auto &x:mp){
           if(x==false) return false;
       }
