@@ -86,3 +86,10 @@ int main() {
  }
  cout<<"a polimdrome"<<endl;
 }
+
+************************sort the given string********************************
+
+  string sort(string s){
+   sort(s.begin(),s.end());
+   return s;
+}
