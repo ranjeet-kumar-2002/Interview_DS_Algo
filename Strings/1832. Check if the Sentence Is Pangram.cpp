@@ -52,3 +52,17 @@ public:
       return true;
     }
 };
+*******************************************************************************************************
+
+
+class Solution {
+public:
+    bool checkIfPangram(string sentence) {
+      vector<int>mp(26);
+      for(auto &ch:sentence) mp[ch-'a']++;
+      for(auto &x:mp){
+          if(x==0) return false;
+      }
+      return true;
+    }
+};
