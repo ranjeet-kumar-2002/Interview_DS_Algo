@@ -1,6 +1,6 @@
 // using pq
 // using simple itaration and sorting
-
+************************************************************************************
 class Solution {
 public:
     string sortVowels(string s) {
@@ -22,7 +22,7 @@ public:
 
     }
 };
-
+******************************************************************************************
 // using pq
 // using simple itaration and sorting
 
@@ -57,4 +57,61 @@ public:
      return ans;
     }
 };
+
+
+*************************************************************************************************
+
+//The vowels must be sorted in the nondecreasing order of their ASCII
+class Solution {
+public:
+    string sortVowels(string s) {
+        vector<int>lower(26,0);
+        vector<int>upper(26,0);
+        for(int i =0;i<s.size();i++){
+            char ch = s[i];
+            if( ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+                lower[ch-'a']++;
+                s[i] = '#';
+            }
+            if(ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U'){
+                upper[ch-'A']++;
+                s[i] ='#';
+            }
+        }
+        string vowel = "";
+        for(int i = 0;i<26;i++){
+            int freq = upper[i];
+            char ch = 'A'+i;
+            while(freq--){
+                vowel +=ch;
+            }
+        }
+
+         for(int i = 0;i<26;i++){
+            int freq = lower[i];
+            char ch = 'a'+i;
+            while(freq--){
+                vowel +=ch;
+            }
+        }
+        string ans = "";
+        int j = 0;
+        for(int i = 0;i<s.size();i++){
+            if(s[i]=='#'){
+                ans +=vowel[j];
+                j++;
+            }else {
+                ans +=s[i];
+            }
+        }
+        return ans;
+
+    }
+};
+
+
+
+
+
+
 
