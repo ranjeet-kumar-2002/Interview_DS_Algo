@@ -6,7 +6,7 @@ public:
         return nums[n/2];
     }
 };
-
+**********************************************
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
@@ -19,7 +19,7 @@ public:
        return 0;
     }
 };
-
+*****************************************
 // boYER moore voting algorithms
 class Solution {
 public:
