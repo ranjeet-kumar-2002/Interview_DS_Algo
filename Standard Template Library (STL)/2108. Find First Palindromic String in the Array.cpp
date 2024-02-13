@@ -1,14 +1,9 @@
 class Solution {
 public:
     bool isPolimdrome(string &s){
-        int i = 0;
-        int j = s.size()-1;
-        while(i<j){
-            if(s[i] !=s[j]) return false;
-            i++;
-            j--;
-        }
-        return true;
+        string temp = s;
+        reverse(temp.begin(),temp.end());
+        return temp == s;
     }
     string firstPalindrome(vector<string>& words) {
         for(int i = 0;i<words.size();i++){
