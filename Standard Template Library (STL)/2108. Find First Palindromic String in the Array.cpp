@@ -12,3 +12,20 @@ public:
         return "";
     }
 };
+
+//Approach-1 (creating a reversed string)
+//T.C : O(m*n) - m = number of words, n = max length length of words
+//S.C : O(n) - Creating a reversed string
+class Solution {
+public:
+    string firstPalindrome(vector<string>& words) {
+        for(string &word : words) {
+            if(word == string(rbegin(word), rend(word))) {
+                return word;
+            }
+        }
+        
+        return "";
+        
+    }
+};
