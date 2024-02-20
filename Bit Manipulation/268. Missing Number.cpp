@@ -10,7 +10,7 @@ public:
        return naturesum-sum;
     }
 };
-**************************************************************8888
+**************************************************************
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
