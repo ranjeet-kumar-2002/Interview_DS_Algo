@@ -1,5 +1,5 @@
 
-class Solution {
+class Solution {  // O(log2(n))
 public:
     int rangeBitwiseAnd(int left, int right) {
         int shift = 0;
