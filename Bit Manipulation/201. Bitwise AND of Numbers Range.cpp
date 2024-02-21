@@ -4,7 +4,7 @@ public:
     int rangeBitwiseAnd(int left, int right) {
         int shift = 0;
         while(left !=right){
-            left = left>>1;  // left = left/2;
+            left = left>>1;  // longest common prefix
             right = right>>1;
             shift++;
         }
