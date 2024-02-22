@@ -35,3 +35,35 @@ int main(){
     }
     
 }
+
+**********************************************************************************************
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node*left;
+    Node* right;
+    Node(int value){
+        data = value;
+        left=right=NULL;
+    }
+};
+
+Node*bt(){
+    int x;
+    cin>>x;
+    if(x==-1) return NULL;
+    Node* temp = new Node(x);
+    cout<<"Enter the left element"<<x<<":";
+    temp->left = bt();
+     cout<<"Enter the right element"<<x<<":";
+    temp->right = bt();
+    return temp;
+}
+int main(){
+    Node*root;
+    cout<<"Enter the root element"<<endl;
+    root = bt();
+}
+
