@@ -1,20 +1,32 @@
-class Solution {
-public:
-    vector<long long> findPrefixScore(vector<int>& nums) {
-         vector<long long> temp;
-         int maxi = INT_MIN;
-         for(int i = 0;i<nums.size();i++){
-             if(maxi<nums[i]){
-                 maxi = nums[i];
-             }
-             temp.push_back(nums[i]+maxi);
-         }
-         vector<long long>ans;
-         long long currsum = 0;
-         for(int i =0;i<temp.size();i++){
-             currsum +=temp[i];
-             ans.push_back(currsum);
-         }
-         return ans;
+
+int f(Node* root){
+    if(root->left==NULL && root->right==NULL) return 1;
+    int leftcount = 0;
+    int rightcount= 0;
+    if(root->left) {
+      leftcount +=f(root->left);
     }
-};
+    if(root->right){
+        rightcount +=f(root->right);
+    }
+    return leftcount+rightcount;
+}
+int countLeaves(Node* root){
+  return f(root);
+}
+
+
+int f(Node* root){
+    if(root->left==NULL && root->right==NULL) return 1;
+    int count = 0;
+    if(root->left) {
+       count +=f(root->left);
+    }
+    if(root->right){
+        count +=f(root->right);
+    }
+    return count;
+}
+int countLeaves(Node* root){
+   return f(root);
+}
