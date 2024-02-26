@@ -45,5 +45,20 @@ public:
     }
 };
 
-
+***********************************************************very efficent method************************
+class Solution {
+public:
+    int m = 1000000000 + 7; // 1e9+7
+    long long power(int a, int b) {
+        long long res = 1;
+        while(b){
+            if(b & 1){
+                res = (res * (long long)a) % m;
+            }
+            a = ((long long)a * a) % m;
+            b = b >> 1;
+        }
+        return res;
+    }
+};
 
