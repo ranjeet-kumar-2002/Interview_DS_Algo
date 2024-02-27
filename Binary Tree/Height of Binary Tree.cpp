@@ -8,7 +8,7 @@ class Solution{
       return h(node);
     }
 };
-
+***************************************************************
 //Height of Binary Tree
 
 class Solution{
@@ -21,5 +21,20 @@ class Solution{
     }
     int height(struct Node* node){
        return h(node);
+    }
+};
+***************************************************
+
+class Solution{
+    public:
+    int h(Node* root){
+        if(root==NULL) return 0;
+        int left = h(root->left);
+        int right = h(root->right);
+        if(left>right) return 1+left;
+        else return 1+right;
+    }
+    int height(struct Node* node){
+      return h(node);
     }
 };
