@@ -31,3 +31,28 @@ public:
         
     }
 };
+
+**************************************count ans sum of fators************************
+
+    class Solution {
+    public:
+    int kthFactor(int n, int k) {
+        int ct = 0;
+        int sum = 0;
+        for(int i = 1;i<=sqrt(n);i++){
+                if(n%i==0){
+                     if(n/i==i){
+                          ct++;
+                          sum +=i;
+                     }
+                      else {
+                           sum +=i+n/i;
+                           ct+=2;
+                     }
+                }
+             }
+        cout<<ct<<endl;
+        cout<<sum<<endl;
+    }
+};
+
