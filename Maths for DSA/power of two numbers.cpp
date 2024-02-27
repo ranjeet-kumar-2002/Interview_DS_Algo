@@ -62,3 +62,20 @@ public:
     }
 };
 
+****************************************************************
+
+class Solution {
+public:
+    int m = 1000000000 + 7; // 1e9+7
+    long long power(long long a, long long b) {
+        long long res = 1;
+        while(b){
+            if(b & 1){
+                res = (res *a) % m;
+            }
+            a = (a * a) % m;
+            b = b >> 1;
+        }
+        return res;
+    }
+};
