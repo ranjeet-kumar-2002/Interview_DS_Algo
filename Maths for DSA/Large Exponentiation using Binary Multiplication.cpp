@@ -1,3 +1,6 @@
+//Large Exponentiation using Binary Multiplication if a is very large and M is very large
+// a<=10^18 and m<=10^18
+
 #include<bits/stdc++.h>
 using namespace std;
 const int M = 1e18+7;
