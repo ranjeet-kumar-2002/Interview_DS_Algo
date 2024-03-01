@@ -1,7 +1,7 @@
 //**Tree from Postorder and Inorder
 
 
-int find(int in[],int target,int start,int end){
+int find(int in[],int target,int start,int end){   //O(n^2) //O(n)
     for(int i =start;i<=end;i++){
         if(in[i]==target) return i;
     }
@@ -19,3 +19,6 @@ Node* tree(int in[],int post[],int instart,int inend,int indx ){
 Node *buildTree(int in[], int post[], int n) {
    return tree(in,post,0,n-1,n-1);
 }
+
+**************We can reduce the time complexity using map for finding the element in the inorder vector*****************8
+    // O(n) //O(n)
