@@ -23,3 +23,6 @@ class Solution{
        return tree(in,pre,0,n-1,0); 
     }
 };
+
+**************We can reduce the time complexity using map for finding the element in the inorder vector*****************8
+    // O(n) //O(n)
