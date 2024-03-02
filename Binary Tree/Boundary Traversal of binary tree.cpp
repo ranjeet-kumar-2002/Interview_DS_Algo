@@ -32,7 +32,7 @@ public:
         ans.push_back(root->data);
         findleftboundry(root->left, ans);
         if(root->left || root->right) findleafnode(root, ans); 
-        //if root =only one node if(root->left || root->right)
+        //if root =only one node if(root->left || root->right) if root=1 then ans should be 1 only
         findrightboundry(root->right, ans);
         return ans;
     }
