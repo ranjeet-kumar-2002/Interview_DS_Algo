@@ -1,3 +1,4 @@
+*****************deleteNode
 Node *deleteNode(Node *root, int X) {
    if(!root) return NULL;
    else if(root->data>X){
