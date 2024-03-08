@@ -29,3 +29,19 @@ int sum(Node* root, int k) {
     inorder(root,summ,k);
     return summ;
 } 
+
+****************************************************
+void inorder(Node* root,int &sum,int &k){
+    if(!root) return;
+    inorder(root->left,sum,k);
+    k--;
+    if(k>=0) sum +=root->data;
+    //if(k<=0) return;  // we  will not write this code then it will traverse intire nodes if(k<=0) return; 
+    inorder(root->right,sum,k);
+}
+int sum(Node* root, int k) { 
+    int summ = 0;
+    inorder(root,summ,k);
+    return summ;
+} 
+
