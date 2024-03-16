@@ -1,3 +1,4 @@
+similar 560 ,930,1074,525
 ***********************************************************************
 class Solution(object):
     def findMaxLength(self, nums):
