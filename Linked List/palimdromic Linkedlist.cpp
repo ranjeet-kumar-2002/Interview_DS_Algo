@@ -1,4 +1,4 @@
-
+// using extra space 
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
@@ -15,7 +15,7 @@ public:
         return temp==x;
     }
 };
-
+// using extra space but little optimize
 **********************************************
 
 class Solution {
@@ -37,7 +37,9 @@ public:
         return true;
     }
 };
-
+******************************************
+   // using reverse and midlle 
+    
 class Solution {
 public:
     ListNode* reverse(ListNode* head){
@@ -80,7 +82,7 @@ public:
 };
 
 ************************************************************
-
+// using reverse wtihout making reverse function separately
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
@@ -115,6 +117,7 @@ public:
 
 //*******************************************************
 
+// using recursion
 
 class Solution {
 public:
