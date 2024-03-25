@@ -4,17 +4,18 @@
 // // using sorting+indx+value
 // // using nature number sum
 // // using vector to check if it is visited or not if not the mark visited true corresponding that element 
-// class Solution {
-// public:
-//     int findDuplicate(vector<int>& nums) {
-//         unordered_map<int ,int>mp;
-//         for(int i =0;i<nums.size();i++) mp[nums[i]]++;
-//         for(auto &m:mp){
-//             if(m.second>1) return m.first;
-//         }
-//         return 0;
-//     }
-// };
+
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        unordered_map<int ,int>mp;
+        for(int i =0;i<nums.size();i++) mp[nums[i]]++;
+        for(auto &m:mp){
+            if(m.second>1) return m.first;
+        }
+        return 0;
+    }
+};
 
 
 // /////////////////////////////////////////////////////////////////////////
