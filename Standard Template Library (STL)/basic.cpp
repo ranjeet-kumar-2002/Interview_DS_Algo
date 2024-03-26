@@ -144,3 +144,97 @@ int main(){
      }
 }
 
+*************************************map************************************
+        
+// It stores the data in key and value pair
+// It uses the Red_black tree or AVL tree for implmentation
+// Insert Search and deltetion operations have logarothmic tc 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+     map<int,int>mp;
+     mp.insert(make_pair(50,30));
+     mp.insert(make_pair(40,30));
+     mp.insert(make_pair(10,30));
+     mp.insert(make_pair(30,30));
+     for(auto it = mp.begin();it != mp.end();it++){
+          cout<<it->first<<" "<<it->second<<endl;
+     }
+     for(auto &m:mp){
+          cout<<m.first<<" "<<m.second<<endl;
+     }
+}
+
+
+
+*********************multimap***************************
+        
+// duplicate values allowed but we can't update the values 
+// beacuse here multiple keys allowed 
+// It uses the Red_black tree or AVL tree for implmentation
+// Insert Search and deltetion operations have logarothmic tc 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+     multimap<int,int>mp;
+     mp.insert(make_pair(50,30));
+     mp.insert(make_pair(40,30));
+     mp.insert(make_pair(10,30));
+     mp.insert(make_pair(30,30));
+     mp.insert(make_pair(30,30));
+     mp.insert(make_pair(30,30));
+     
+     for(auto it = mp.begin();it != mp.end();it++){
+          cout<<it->first<<" "<<it->second<<endl;
+     }
+     for(auto &m:mp){
+          cout<<m.first<<" "<<m.second<<endl;
+     }  
+ }
+
+
+********************* unordered_map***************************
+        
+// order will change means not in ordered
+// It stores the data in key and value pair
+// It uses the Red_black tree or AVL tree for implmentation
+// Insert Search and deltetion operations have constant tc 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+     unordered_map<int,int>mp;
+     mp.insert(make_pair(50,30));
+     mp.insert(make_pair(40,30));
+     mp.insert(make_pair(10,30));
+     mp.insert(make_pair(30,30));
+     for(auto it = mp.begin();it != mp.end();it++){
+          cout<<it->first<<" "<<it->second<<endl;
+     }
+     
+}
+
+
+********************* unordered_multimap***************************
+order will change means not in ordered
+It stores the data in key and value pair
+It uses the Red_black tree or AVL tree for implmentation
+Insert Search and deltetion operations have constant tc 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+     unordered_multimap<int,int>mp;
+     mp.insert(make_pair(50,30));
+     mp.insert(make_pair(40,30));
+     mp.insert(make_pair(10,30));
+     mp.insert(make_pair(30,30));
+     mp.insert(make_pair(30,30));
+     mp.insert(make_pair(30,30));
+     for(auto it = mp.begin();it != mp.end();it++){
+          cout<<it->first<<" "<<it->second<<endl;
+     }
+}
