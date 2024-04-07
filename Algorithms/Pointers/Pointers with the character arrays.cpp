@@ -13,3 +13,48 @@ int main(){
      cout<<(void*)&name<<endl;
      cout<<(void*)ptr1<<endl;
 }
+
+**************************************************************************
+#include<iostream>
+using namespace std;
+void incre(int *p){
+     *p = *p+1;
+}
+int main(){
+    int num = 10;
+    int temp = num;
+    incre(&num);
+    cout<<num;
+    return 0;
+}
+
+************************************************************************************
+#include<iostream>
+using namespace std;
+void fun(int *p1,int *p2){
+     int temp = *p1;
+     *p1 = *p2;
+     *p2 = temp;
+}
+int main(){
+    int num1 = 10;
+    int num2 = 11;
+    fun(&num1,&num2);
+    cout<<num1<<" "<< num2<<endl;
+}
+
+
+***************************************************************************************
+#include<iostream>
+using namespace std;
+void fun(int &p1,int &p2){
+     int temp = p1;
+     p1 = p2;
+     p2 = temp;
+}
+int main(){
+    int num1 = 10;
+    int num2 = 11;
+    fun(num1,num2);
+    cout<<num1<<" "<< num2<<endl;
+}
