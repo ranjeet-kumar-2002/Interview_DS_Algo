@@ -74,3 +74,27 @@ int main(){
 // Max Heap and it's postorder traversal is
 // 1 2 3 4 5 6 7.
 
+***************************************************************************************
+class Solution{
+  public:
+    void Inorder(Node* root,vector<int>&ans){
+         if(!root) return;
+         Inorder(root->left,ans);
+         ans.push_back(root->data);
+         Inorder(root->right,ans);
+    }
+    void postorder(Node* root,vector<int>&ans,int &indx){
+         if(!root) return;
+         postorder(root->left,ans,indx);
+         postorder(root->right,ans,indx);
+         root->data = ans[indx];indx++;
+    }
+    void convertToMaxHeapUtil(Node* root){
+      vector<int>ans;
+      Inorder(root,ans);
+      int indx = 0;
+      postorder(root,ans,indx);
+    }    
+};
+
+
