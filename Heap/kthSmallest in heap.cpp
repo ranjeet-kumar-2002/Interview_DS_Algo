@@ -1,3 +1,7 @@
+// convert 2D matrix into 1D array then sort
+// using min heap
+// using binary search
+// using min with optimal insertion
 
 //********imp problem******//
 
