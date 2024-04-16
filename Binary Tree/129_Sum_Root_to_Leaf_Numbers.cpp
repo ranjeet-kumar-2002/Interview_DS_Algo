@@ -52,28 +52,26 @@ int main(){
     queue<TreeNode*> q;
     q.push(root);
     int i = 1;
-    while(!q.empty() and i<n){
+    while(!q.empty() or i<n){
         TreeNode* temp = q.front(); q.pop();
-        // if(temp == NULL) continue;
-        // debug it
         
-        if(v[i] != -1){
+        if(v[i] != -1 and i<n){
             temp->left = new TreeNode(v[i++]);
+            q.push(temp->left);
         } 
         else{ 
             temp->left = NULL;
             i++;
         }
-        q.push(temp->left);
         
-        if(v[i] != -1){
+        if(v[i] != -1 and i<n){
             temp->right = new TreeNode(v[i++]);
+            q.push(temp->right);
         } 
         else{
             temp->right = NULL;
             i++;
         }
-        q.push(temp->right);
     }
 
     Solution obj;
