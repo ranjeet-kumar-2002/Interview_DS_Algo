@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 // school(place value) me para tha 12345 increasing order if we want to make smallest number {1,2,3,4,5,6}
 // increasing order
 // delete k element from left to right
@@ -36,3 +39,18 @@ public:
         return st.empty() ? "0" : st;
     }
 };
+
+
+int main(){
+    Solution obj;
+    string num;
+    cout<<"Enter number: ";
+    cin>>num;
+
+    int k;
+    cout<<"Enter k: ";
+    cin>>k;
+
+    cout<<obj.removeKdigits(num,k);
+    return 0;
+}
