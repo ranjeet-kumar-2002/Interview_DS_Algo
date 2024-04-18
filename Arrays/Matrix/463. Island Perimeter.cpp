@@ -51,12 +51,8 @@ int main(){
 
 //**********************************Code by Crazy-Co************************************
 
-#include<iostream>
-#include<vector>
-#include<queue>
-#include<cmath>
-#include<climits>
-using namespace std;
+    class Solution{
+    public:
     int neighbor(int i, int j, vector<vector<int>>& grid){
         int count=0;
 
@@ -80,17 +76,6 @@ using namespace std;
                 }
             }
         }
-
         return perimeter;
-}
-
-int main(){
-     int m,n;cin>>m>>n;
-     vector<vector<int>>grid(m,vector<int>(n));
-     for(int i =0;i<m;i++){
-         for(int j =0;j<n;j++){
-              cin>>grid[i][j];
-         }
-     }
-     cout<<islandPerimeter(grid)<<endl;
-}
+   }
+};
