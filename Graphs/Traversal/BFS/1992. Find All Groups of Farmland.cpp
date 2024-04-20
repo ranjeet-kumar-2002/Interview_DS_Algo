@@ -76,3 +76,55 @@ int main(){
 
      return 0;
 }
+
+
+****************************************************************************
+
+
+class Solution {
+public:
+    bool isvalid(vector<vector<int>>& land, int newi, int newj, int m, int n) {
+        if (newi >= 0 && newj >= 0 && m > newi && n > newj)
+            return true;
+        return false;
+    }
+    void bfs(vector<vector<int>>& land, int row, int col, int m, int n ,int &maxRow,int &maxCol) {
+            vector<vector<int>> dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+            queue<pair<int, int>> q;
+            q.push({row, col});
+            land[row][col] = 0;
+            while (!q.empty()) {
+                   auto p = q.front();
+                   q.pop();
+                   int i = p.first;
+                   int j = p.second;
+                   maxRow = max(i,maxRow);
+                   maxCol = max(j,maxCol);
+                   for(int d = 0;d<4;d++){
+                     int newi = i+dir[d][0];
+                     int newj = j+dir[d][1];
+                     if(isvalid(land,newi,newj,m,n) && land[newi][newj]==1){
+                         q.push({newi,newj});
+                         land[newi][newj]=0;
+                     }
+                   }
+            }
+    }
+    vector<vector<int>> findFarmland(vector<vector<int>>& land) {
+        int m = land.size();
+        int n = land[0].size();
+        vector<vector<int>> ans;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (land[i][j] == 1) {
+                    int maxRow = 0;
+                    int maxCol = 0;
+                    bfs(land,i,j,m,n,maxRow,maxCol);
+                    ans.push_back({i,j,maxRow,maxCol});
+                }
+            }
+        }
+        return ans;
+    }
+};
+
