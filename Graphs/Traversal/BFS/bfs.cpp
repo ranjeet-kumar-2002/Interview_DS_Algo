@@ -102,3 +102,29 @@ class Solution {
       return ans;
     }
 };
+
+//*****************************************************************************************//
+
+//BFS of graph
+class Solution {
+  public:
+    vector<int> bfsOfGraph(int V, vector<int> adj[]) {
+        vector<int>visited(V,0);
+        queue<int>q;
+        q.push(0);
+        visited[0] = 1;
+        vector<int>ans;
+        while(!q.empty()){
+             int node = q.front();q.pop();
+             ans.push_back(node);
+             for(int j = 0;j<adj[node].size();j++){
+                  if(!visited[adj[node][j]]){
+                       q.push(adj[node][j]);
+                       visited[adj[node][j]]=1;
+                  }
+             }
+        }
+          return ans;
+    }
+};
+
