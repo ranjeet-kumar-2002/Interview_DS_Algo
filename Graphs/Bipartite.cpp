@@ -43,3 +43,30 @@ int main(){
      cout<<isBipartite(v,adj);
      return 0;
 }
+
+************************************************************************************************
+
+class Solution {
+public:
+    bool bipartite(int src,vector<int>&color,vector<int>adj[]){
+        for(auto &nbr:adj[src]){
+            if(color[nbr]==-1){
+                color[nbr] = (color[src]+1)%2;
+                if(!bipartite(nbr,color,adj)) return 0;
+            }else {
+                 if(color[nbr]==color[src]) return 0;
+            }
+        }
+        return 1;
+    }
+	bool isBipartite(int V, vector<int>adj[]){
+	    vector<int>color(V,-1);
+	    for(int i = 0;i<V;i++){
+	            if(color[i]==-1){
+	                  if(!bipartite(i,color,adj)) return 0;
+	            }
+	    }
+	    return true;
+	}
+};
+*********************************************************************************************8
