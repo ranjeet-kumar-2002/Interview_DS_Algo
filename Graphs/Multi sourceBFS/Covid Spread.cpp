@@ -1,6 +1,10 @@
-
-class Solution {
-public:
+#include<iostream>
+#include<vector>
+#include<queue>
+#include<climits>
+#include<cmath>
+#include<algorithm>
+using namespace std;
     vector<vector<int>>dir = {{0,1},{1,0},{-1,0},{0,-1}};
     int helpaterp(vector<vector<int>> hospital){
        int m = hospital.size();
@@ -34,9 +38,7 @@ public:
                 }
             }
             if(flag==true) time++;
-            
        }
-       
        bool flag = false;
        for(int i = 0;i<m;i++){
            for(int j = 0;j<n;j++){
@@ -48,6 +50,16 @@ public:
        }
        if(flag == true) return -1;
        return time;
-       
     }
-};
+int main(){
+    int m, n;
+    cin >> m >> n;
+    vector<vector<int>> hospital(m, vector<int>(n)); 
+
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            cin >> hospital[i][j];
+        }
+    }
+    cout<<helpaterp(hospital);
+}
