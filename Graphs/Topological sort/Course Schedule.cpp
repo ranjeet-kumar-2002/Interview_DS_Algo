@@ -49,3 +49,41 @@ int main(){
      for(auto &x:ans) cout<<x<<endl;
      return 0;
 }
+
+
+*********************************************************************************
+
+class Solution
+{
+  public:
+    vector<int> findOrder(int n, int m, vector<vector<int>> prerequisites){
+      vector<int>adj[n];
+      vector<int>indegree(n,0);
+      for(auto &x:prerequisites){
+          int u = x[0];
+          int v = x[1];
+          adj[v].push_back(u);
+          indegree[u]++;
+      }
+      queue<int>q;
+      for(int i = 0;i<n;i++){
+            if(indegree[i]==0) q.push(i);
+      }
+       
+      vector<int>ans;
+      while(!q.empty()){
+            int node = q.front();q.pop();
+            ans.push_back(node);
+            for(auto &nbr:adj[node]){
+                indegree[nbr]--;
+                if(indegree[nbr]==0){
+                     q.push(nbr);
+                }
+            }
+      }
+      if(ans.size()==n) return ans;
+      return {};
+       
+    }
+};
+******************************************************************************************
