@@ -159,3 +159,48 @@ int main() {
    cout<<"display third object"<<endl;
    c.display();
 }
+
+//*********************************destructor************************************//
+#include<iostream>
+using namespace std;
+class customer{
+    string name;
+    int *data;
+    public:
+    customer(){
+        cout<<"constructor is called\n"<<endl;
+    }
+    ~customer(){
+         delete data; // Free the allocated memory
+         cout<<"destructor is called\n"<<endl;
+    }
+};
+int main(){
+    customer A1;
+    return 0;
+}
+
+
+
+// constructor is called orderdwise and destructor is called reverse order
+
+#include<iostream>
+using namespace std;
+class customer{
+    string name;
+    int *data;
+    public:
+    customer(string name){
+        this->name = name;
+        cout<<"constructor is"<<name<<endl;
+    }
+    ~customer(){
+        
+         cout<<"destructor is called\n"<<name<<endl;
+    }
+};
+int main(){
+    customer A1("1"),A2("2"),A3("3");
+    return 0;
+}
+
