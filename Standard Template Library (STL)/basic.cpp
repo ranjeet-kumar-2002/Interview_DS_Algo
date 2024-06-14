@@ -156,6 +156,7 @@ int main(){
 
 // duplicate elements can be but sorted ordered
 // using multset also red black tree
+// if we want to erase any element it will erase all the occurances of that element        
         
 #include<bits/stdc++.h>
 using namespace std;
@@ -173,6 +174,24 @@ int main(){
      }
 }
 
+****************************************************************************************
+#include <iostream>
+#include <utility>
+#include<vector>
+#include<set>
+using namespace std;
+int main() {
+   multiset<int>ms;
+   ms.insert(1); //[1]
+   ms.insert(1); //[1,1]
+   ms.insert(1); //[1,1,1];
+   ms.insert(1); //[1,1,1];
+   ms.insert(1); //[1,1,1];
+   ms.erase(1); // all 1's erased
+   ms.erase(ms.find(1)); // only single one erased
+   ms.erase(ms.find(1),ms.find(1)+2); // only single one erased
+   cout<<ms.count(1);
+ }
 **************************** unordered_set********************************
 // it cantains only unique element 
 // search delete and insert have avg constant tc 
