@@ -24,6 +24,75 @@ int main(){
      cout<<p.first<<" "<<p.second.first<<" "<<p.second.second<<endl;
 }
 
+***************************pairs*********************************************
+#include <iostream>
+#include <utility>
+using namespace std;
+int main() {
+    pair<int,int> p = {1,2};
+    cout << p.first << " " << p.second << endl;
+
+    pair<int,pair<int,int>> p1 = {1,{2,3}};
+    cout << p1.first << " " << p1.second.first << " " << p1.second.second << endl;
+
+    pair<int,int> arr[] = {{1,2},{2,5},{5,1}};
+    cout << arr[1].first << " " << arr[1].second << endl;
+    return 0;
+}
+
+//************************vector***************************
+
+#include <iostream>
+#include <utility>
+#include<vector>
+using namespace std;
+int main() {
+    vector<int>v;
+    v.push_back(1);
+    v.emplace_back(2); // faster then push_back()
+    cout<<v.back(); // last element 
+    vector<pair<int,int>>vec;
+    vec.push_back({1,2});
+    vec.emplace_back(1,2);
+    
+    // iterators
+    vector<int>::iterator it = v.begin(); // it point to memory or memory  address 0th index
+    cout<<*(it)<<endl;
+    vector<int>::iterator it = v.end(); // pointing out of bound  means n index 
+    vector<int>::iterator it = v.rend(); // -1th index 
+    vector<int>::iterator it = v.rbegin(); // n-1 index 
+    
+    // accessing the vector using iterator
+    for(vector<int>::iterator it = v.begin(); it !=v.end();it++){
+         cout<<*it<<endl;
+    }
+    for(auto it = v.begin(); it !=v.end();it++){
+         cout<<*it<<endl;
+    }
+    for(auto it :v){
+         cout<<it<<endl;
+    }
+    
+    //******** deletion of vector's element
+    //v{10,11,20,12,23,35}
+    v.erase(v.begin()); //{11,20,12,23,35}
+    v.erase(v.begin()+2,v.end()+3) //  {11,20,23,35} [)
+    
+    //**********insert*****************
+    vector<int>v(2,100); // {100,100}
+    v.insert(v.begin(),300)// {300,100,100}
+    v.insert(v.begin()+1,2,10) // {300,10,10,100,100}
+    vector<int>copy(2,50); //{50,50}
+    v.insert(v.begin(),copy.begin(),copy.end());//{50,50,300,10,10,100,100}
+    
+    cout<<v.size();
+    cout<<v.pop_back();
+    // v1={10,20}
+    // v2={30,40}
+    cout<<v1.swap(v2); //  v1={30,40},v2=={10,20}
+    cout<<v.clear(); // erases the entire vector
+    cout<<v.empty(); // erases the entire vector
+}
 ********************list**************************************
 l.push_back()
 l.push_front()
@@ -87,6 +156,7 @@ int main(){
 
 // duplicate elements can be but sorted ordered
 // using multset also red black tree
+// if we want to erase any element it will erase all the occurances of that element        
         
 #include<bits/stdc++.h>
 using namespace std;
@@ -104,6 +174,24 @@ int main(){
      }
 }
 
+****************************************************************************************
+#include <iostream>
+#include <utility>
+#include<vector>
+#include<set>
+using namespace std;
+int main() {
+   multiset<int>ms;
+   ms.insert(1); //[1]
+   ms.insert(1); //[1,1]
+   ms.insert(1); //[1,1,1];
+   ms.insert(1); //[1,1,1];
+   ms.insert(1); //[1,1,1];
+   ms.erase(1); // all 1's erased
+   ms.erase(ms.find(1)); // only single one erased
+   ms.erase(ms.find(1),ms.find(1)+2); // only single one erased
+   cout<<ms.count(1);
+ }
 **************************** unordered_set********************************
 // it cantains only unique element 
 // search delete and insert have avg constant tc 
